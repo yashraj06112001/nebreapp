@@ -3,11 +3,11 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity('user')
 export class User {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id: number;
 
   @Column({ name: 'created_at', type: 'timestamp' })
-  created_at!: Date;
+  createdAt: Date;
 
   @Column({ name: 'phone_number', type: 'varchar' })
-  phone_number!: string;
+  phoneNumber: string;
 }

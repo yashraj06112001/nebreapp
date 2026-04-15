@@ -1,3 +1,6 @@
+import { ApiPropertyOptional } from '@nestjs/swagger';
+
 export class UpdateUserDto {
-  phone_number?: string;
+  @ApiPropertyOptional({ example: '+1234567890', description: 'Updated phone number' })
+  phoneNumber?: string;
 }
