@@ -1,3 +1,3 @@
 export class CreateUserDto {
-  phoneNumber: string;
+  phone_number!: string;
 }

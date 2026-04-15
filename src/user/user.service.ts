@@ -14,8 +14,8 @@ export class UserService {
 
   async create(createUserDto: CreateUserDto): Promise<User> {
     const user = this.userRepository.create({
-      phoneNumber: createUserDto.phoneNumber,
-      createdAt: new Date(),
+      phone_number: createUserDto.phone_number,
+      created_at: new Date(),
     });
     return this.userRepository.save(user);
   }
@@ -34,7 +34,9 @@ export class UserService {
 
   async update(id: number, updateUserDto: UpdateUserDto): Promise<User> {
     const user = await this.findOne(id);
-    Object.assign(user, { phoneNumber: updateUserDto.phoneNumber ?? user.phoneNumber });
+    Object.assign(user, {
+      phone_number: updateUserDto.phone_number ?? user.phone_number,
+    });
     return this.userRepository.save(user);
   }
 
